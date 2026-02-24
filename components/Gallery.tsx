@@ -6,12 +6,15 @@ import { playfair } from "@/app/layout";
 
 export default function Gallery() {
   const images = [
-    "/gallery/gallery1.jpg",
-    "/gallery/gallery2.jpg",
-    "/gallery/gallery3.jpg",
-    "/gallery/gallery4.jpg",
-    "/gallery/gallery5.jpg",
-    "/gallery/gallery6.jpg",
+    "/gallery/gallery1.jpeg",
+    "/gallery/gallery2.jpeg",
+    "/gallery/gallery3.jpeg",
+    "/gallery/gallery4.jpeg",
+    "/gallery/gallery5.jpeg",
+    "/gallery/gallery6.jpeg",
+    "/gallery/gallery7.jpeg",
+    "/gallery/gallery8.jpeg",
+    "/gallery/gallery9.jpeg",
   ];
 
   return (

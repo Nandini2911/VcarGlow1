@@ -62,7 +62,7 @@ export default function Contact() {
               <Clock className="text-blue-700" />
               <div>
                 <h4 className={`font-semibold ${playfair.className}`}>Working Hours</h4>
-                <p className="text-gray-600 text-sm">24 Hours</p>
+                <p className="text-gray-600 text-sm">24 Hours a Day, 7 Days a Week</p>
               </div>
             </div>
           </motion.div>
