@@ -1,6 +1,7 @@
 "use client";
 
 import { playfair } from "@/app/layout";
+import { Instagram, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -39,6 +40,39 @@ export default function Footer() {
           <p className="text-sm text-gray-400">+91 98765 43210</p>
           <p className="text-sm text-gray-400">info@vcarglow.com</p>
           <p className="text-sm text-gray-400">Your City, India</p>
+
+{/* Social Links */}
+<div className="flex gap-4 mt-6">
+
+  {/* Instagram */}
+  <a
+    href="https://instagram.com/yourusername"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 hover:bg-gradient-to-r hover:from-pink-700 hover:to-red-500 transition duration-300"
+  >
+    <Instagram size={18} className="text-white" />
+  </a>
+
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/919876543210"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 hover:bg-green-500 transition duration-300"
+  >
+    <Phone size={18} className="text-white" />
+  </a>
+
+  {/* Email */}
+  <a
+    href="mailto:info@vcarglow.com"
+    className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 transition duration-300"
+  >
+    <Mail size={18} className="text-white" />
+  </a>
+
+</div>
         </div>
 
       </div>

@@ -63,11 +63,7 @@ export default function Gallery() {
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                <span
-                  className={`text-white text-lg font-semibold tracking-wide ${playfair.className}`}
-                >
-                  View Detail
-                </span>
+                
               </div>
             </motion.div>
           ))}
