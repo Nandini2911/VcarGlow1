@@ -3,10 +3,44 @@
 import { motion } from "framer-motion";
 import { playfair } from "@/app/layout";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        alert("Message Sent Successfully ✅");
+        e.currentTarget.reset();
+      } else {
+        alert("Something went wrong ❌");
+      }
+    } catch (error) {
+      alert("Server error ❌");
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <section id="contact" className="w-full py-24 bg-gray-50 scroll-mt-24">
+    <section id="contact" className="w-full py-24 bg-gray-50 scroll-mt-32">
       <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
 
         {/* Heading */}
@@ -38,7 +72,7 @@ export default function Contact() {
               <Phone className="text-blue-700" />
               <div>
                 <h4 className={`font-semibold ${playfair.className}`}>Phone</h4>
-                <p className="text-gray-600 text-sm">+91 98765 43210</p>
+                <p className="text-gray-600 text-sm">+91 9082736155</p>
               </div>
             </div>
 
@@ -46,7 +80,7 @@ export default function Contact() {
               <Mail className="text-blue-700" />
               <div>
                 <h4 className={`font-semibold ${playfair.className}`}>Email</h4>
-                <p className="text-gray-600 text-sm">info@vcarglow.com</p>
+                <p className="text-gray-600 text-sm">vcarglow@gmail.com</p>
               </div>
             </div>
 
@@ -54,7 +88,7 @@ export default function Contact() {
               <MapPin className="text-blue-700" />
               <div>
                 <h4 className={`font-semibold ${playfair.className}`}>Location</h4>
-                <p className="text-gray-600 text-sm">Your City, India</p>
+                <p className="text-gray-600 text-sm">Mumbai Maharastra, India</p>
               </div>
             </div>
 
@@ -75,31 +109,40 @@ export default function Contact() {
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg p-8"
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+
               <input
+                name="name"
                 type="text"
                 placeholder="Your Name"
+                required
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
 
               <input
+                name="email"
                 type="email"
                 placeholder="Your Email"
+                required
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
 
               <textarea
+                name="message"
                 rows={4}
                 placeholder="Your Message"
+                required
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
               ></textarea>
 
               <button
                 type="submit"
+                disabled={loading}
                 className={`w-full py-3 rounded-full text-white tracking-wider uppercase bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 hover:scale-105 transition duration-300 ${playfair.className}`}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
+
             </form>
           </motion.div>
 

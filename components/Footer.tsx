@@ -37,9 +37,9 @@ export default function Footer() {
           <h4 className={`text-lg font-semibold text-white mb-4 ${playfair.className}`}>
             Contact Info
           </h4>
-          <p className="text-sm text-gray-400">+91 98765 43210</p>
-          <p className="text-sm text-gray-400">info@vcarglow.com</p>
-          <p className="text-sm text-gray-400">Your City, India</p>
+          <p className="text-sm text-gray-400">+91 9082736155</p>
+          <p className="text-sm text-gray-400">vcarglow@gmail.com</p>
+          <p className="text-sm text-gray-400">Mumbai Maharastra, India</p>
 
 {/* Social Links */}
 <div className="flex gap-4 mt-6">
