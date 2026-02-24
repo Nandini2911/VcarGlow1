@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Brand Colors */
+:root {
+  --primary: #0B1C4D;
+  --secondary: #1E3A8A;
+  --light: #F8FAFC;
+}
+
+body {
+  background-color: var(--light);
+  color: #1F2937;
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-playfair);
+}
