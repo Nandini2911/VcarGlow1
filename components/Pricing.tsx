@@ -57,17 +57,17 @@ export default function Pricing() {
     {
       name: "PPF Coating",
       prices: {
-        small: "Contact for Price",
-        medium: "Contact for Price",
-        big: "Contact for Price",
+        small: "50000",
+        medium: "50000",
+        big: "55000",
       },
     },
     {
       name: "Film",
       prices: {
-        small: "Contact for Price",
-        medium: "Contact for Price",
-        big: "Contact for Price",
+        small: "4000",
+        medium: "4000",
+        big: "5000",
       },
     },
     {
