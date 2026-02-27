@@ -57,12 +57,12 @@ export default function Services() {
       img: "/services/complete-car-wash.png",
     },
     {
-      title: "PPF Coating",
+      title: "PPF Coating (Coming Soon)",
       desc: "Paint Protection Film to safeguard your vehicle from scratches and stone chips.",
       img: "/services/ppf-coating.png",
     },
     {
-      title: "Film Coating",
+      title: "Film Coating (Coming Soon)",
       desc: "Protective film application for enhanced durability and gloss.",
       img: "/services/film-coating.png",
     },
