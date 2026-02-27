@@ -39,7 +39,7 @@ export default function Footer() {
           </h4>
           <p className="text-sm text-gray-400">+91 9082736155</p>
           <p className="text-sm text-gray-400">vcarglow@gmail.com</p>
-          <p className="text-sm text-gray-400">Mumbai Maharastra, India</p>
+          <p className="text-sm text-gray-400">Shop No.7, Archana Apts, Opp. Sunder Nagar, S.V. Road, Malad (w), Mum-400064</p>
 
 {/* Social Links */}
 <div className="flex gap-4 mt-6">

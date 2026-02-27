@@ -88,7 +88,7 @@ export default function Contact() {
               <MapPin className="text-blue-700" />
               <div>
                 <h4 className={`font-semibold ${playfair.className}`}>Location</h4>
-                <p className="text-gray-600 text-sm">Mumbai Maharastra, India</p>
+                <p className="text-gray-600 text-sm">Shop No.7, Archana Apts, Opp. Sunder Nagar, S.V. Road, Malad (w), Mumbai - 400064</p>
               </div>
             </div>
 

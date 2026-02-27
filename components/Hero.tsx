@@ -53,13 +53,19 @@ export default function Hero() {
 
           <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start ${playfair.className}`}>
             
-            <button className="px-5 py-2 rounded-full text-white bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 hover:scale-105 transition duration-300 shadow-md text-sm sm:text-base">
-              Book Appointment
-            </button>
+           <a
+  href="#contact"
+  className="px-5 py-2 rounded-full text-white bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 hover:scale-105 transition duration-300 shadow-md text-sm sm:text-base inline-block text-center"
+>
+  Book Appointment
+</a>
 
-            <button className="px-6 py-3 rounded-full border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition duration-300 text-sm sm:text-base">
-              View Services
-            </button>
+         <a
+  href="#services"
+  className="px-6 py-3 rounded-full border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition duration-300 text-sm sm:text-base inline-block text-center"
+>
+  View Services
+</a>
 
           </div>
         </motion.div>

@@ -69,18 +69,22 @@ export default function Navbar() {
         <div
           className={`md:hidden bg-white shadow-lg px-6 py-6 space-y-5 text-lg font-semibold ${playfair.className}`}
         >
-          {["Home", "About", "Services", "Pricing", "Contact"].map(
-            (item) => (
-              <a
-                key={item}
-                href="#"
-                className="block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent"
-                onClick={() => setOpen(false)}
-              >
-                {item}
-              </a>
-            )
-          )}
+       {[
+  { name: "Home", link: "#" },
+  { name: "About", link: "#about" },
+  { name: "Services", link: "#services" },
+  { name: "Pricing", link: "#pricing" },
+  { name: "Contact", link: "#contact" },
+].map((item) => (
+  <a
+    key={item.name}
+    href={item.link}
+    className="block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent"
+    onClick={() => setOpen(false)}
+  >
+    {item.name}
+  </a>
+))}
 
           <button className="w-full mt-4 px-5 py-2 rounded-full text-white tracking-wider uppercase bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500">
             Book Now
