@@ -8,36 +8,43 @@ import { useState } from "react";
 export default function Contact() {
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setLoading(true);
 
-    const formData = new FormData(e.currentTarget);
+  const form = e.currentTarget; // ✅ store form reference first
 
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
+  const formData = new FormData(form);
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        alert("Message Sent Successfully ✅");
-        e.currentTarget.reset();
-      } else {
-        alert("Something went wrong ❌");
-      }
-    } catch (error) {
-      alert("Server error ❌");
-    }
-
-    setLoading(false);
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message"),
   };
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      alert("Message Sent Successfully ✅");
+      form.reset(); // ✅ now safe
+    } else {
+      alert("Server Error ❌");
+    }
+  } catch (error) {
+    alert("Server Error ❌");
+  }
+
+  setLoading(false);
+};
 
   return (
     <section id="contact" className="w-full py-24 bg-gray-50 scroll-mt-32">
