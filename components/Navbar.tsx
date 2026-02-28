@@ -70,7 +70,7 @@ export default function Navbar() {
           className={`md:hidden bg-white shadow-lg px-6 py-6 space-y-5 text-lg font-semibold ${playfair.className}`}
         >
        {[
-  { name: "Home", link: "#" },
+  { name: "Home", link: "" },
   { name: "About", link: "#about" },
   { name: "Services", link: "#services" },
   { name: "Pricing", link: "#pricing" },
@@ -86,9 +86,12 @@ export default function Navbar() {
   </a>
 ))}
 
-          <button className="w-full mt-4 px-5 py-2 rounded-full text-white tracking-wider uppercase bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500">
-            Book Now
-          </button>
+          <a
+  href="#contact"
+  className="block w-full mt-4 px-5 py-2 rounded-full text-white tracking-wider uppercase text-center bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 hover:scale-105 transition duration-300"
+>
+  Book Now
+</a>
         </div>
       )}
     </nav>
